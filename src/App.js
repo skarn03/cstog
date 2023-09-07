@@ -75,7 +75,9 @@ function App() {
                 }
               </div>
               <div className=' w-full mt-16  pr-0 md:ml-60  md: min-h-screen md:h-screen '>
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={
+                  <div className="center">
+                  </div>}>
                   <Routes>
                     {routes}
                   </Routes>
@@ -90,7 +92,9 @@ function App() {
     return (
       <AuthContext.Provider value={{ isLoggedIn: !!token, token: token, userID: userID, login: login, logout: logout }}>
         <Router>
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={
+            <div className="center">
+            </div>}>
             <Routes>
               {routes}
             </Routes>
